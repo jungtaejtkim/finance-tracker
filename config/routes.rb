@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "user/registrations" } #devise 의 regi 를 위해 컨트롤러 유저폴더의 regi 컨트롤러를 참조하라 
   resources :user_stocks, except: [:show, :edit, :update]
   root 'welcome#index'
   get 'my_portfolio', to: 'users#my_portfolio'
